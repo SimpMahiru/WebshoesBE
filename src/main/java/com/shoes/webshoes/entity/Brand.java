@@ -1,11 +1,11 @@
 package com.shoes.webshoes.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Column;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,12 +13,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @Data
 @Entity
-@Table(name = "categories")
-public class Category extends BaseEntity {
-	/**
+@Table(name = "brands")
+public class Brand extends BaseEntity{
+    /**
 	 * 
 	 */
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -27,8 +26,8 @@ public class Category extends BaseEntity {
 
 	private String name;
 
-	@Column(name = "parent_id")
-	private int parentId;
+	@Column(name = "image_url")
+	private String imageUrl;
 
 	private int status;
 }
