@@ -1,4 +1,4 @@
-package com.shoes.webshoes.dao.Impl;
+package com.shoes.webshoes.dao;
 
 import com.shoes.webshoes.common.utils.Pagination;
 import com.shoes.webshoes.entity.Color;
