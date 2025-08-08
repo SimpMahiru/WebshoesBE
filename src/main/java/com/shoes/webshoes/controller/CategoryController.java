@@ -110,6 +110,34 @@ public class CategoryController  {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
+	@PostMapping("/{id}/update")
+	public ResponseEntity<BaseResponse<CategoryResponse>> update(@PathVariable("id") int id,
+																 @Valid @RequestBody CRUDCategoryRequest wrapper) throws Exception {
+
+		BaseResponse<CategoryResponse> response = new BaseResponse<>();
+		Category Category = categoryService.findOne(id);
+
+		if (Category == null) {
+			response.setStatus(HttpStatus.BAD_REQUEST);
+			response.setMessageError(StringErrorValue.CATEGORY_NOT_FOUND);
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		}
+
+		// check name đã tồn tại hay chưa
+		if (!Category.getName().equals(wrapper.getName())
+				&& categoryService.findByName(wrapper.getName()) != null) {
+			response.setStatus(HttpStatus.BAD_REQUEST);
+			response.setMessageError(StringErrorValue.CATEGORY_IS_EXIST);
+			return new ResponseEntity<>(response, HttpStatus.OK);
+
+		}
+		Category.setName(wrapper.getName());
+		categoryService.update(Category);
+
+		response.setData(new CategoryResponse(Category));
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
 
 
 }
