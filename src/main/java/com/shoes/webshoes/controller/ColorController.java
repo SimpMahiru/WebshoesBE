@@ -103,31 +103,6 @@ public class ColorController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
-	@PostMapping("/{id}/update")
-	public ResponseEntity<BaseResponse<ColorResponse>> update(@PathVariable("id") int id,
-			@Valid @RequestBody CRUDColorRequest wrapper) throws Exception {
-
-		BaseResponse<ColorResponse> response = new BaseResponse<>();
-		Color color = colorService.findOne(id);
-
-		if (color == null) {
-			response.setStatus(HttpStatus.BAD_REQUEST);
-			response.setMessageError(StringErrorValue.COLOR_NOT_FOUND);
-			return new ResponseEntity<>(response, HttpStatus.OK);
-		}
-
-		if (!color.getName().equals(wrapper.getName())
-				&& colorService.findByName(wrapper.getName()) != null) {
-			response.setStatus(HttpStatus.BAD_REQUEST);
-			response.setMessageError(StringErrorValue.COLOR_IS_EXIST);
-			return new ResponseEntity<>(response, HttpStatus.OK);
-
-		}
-		color.setName(wrapper.getName());
-		colorService.update(color);
-
-		response.setData(new ColorResponse(color));
-		return new ResponseEntity<>(response, HttpStatus.OK);
-	}
+	
 
 }
