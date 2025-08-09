@@ -24,6 +24,7 @@ public class BaseResponse<T> {
 	public void setStatus(HttpStatus statusEnum) {
 		this.status = statusEnum.value();
 		this.message = statusEnum.name();
+		//set namee
 	}
 	public String getMessage() {
 		return this.message;

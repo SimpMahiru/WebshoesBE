@@ -65,7 +65,9 @@ private static final long serialVersionUID = 1L;
 			return (new SimpleDateFormat("dd/MM/yyyy").format(date));
 		}
 	}
-	
+
+	// Trả về chuỗi ngày giờ theo định dạng Việt Nam (dd/MM/yyyy HH:mm),
+// nếu date = null thì trả về chuỗi rỗng
 	public String getDatetimeFormatVNEmptyIfNull(Date date) {
 		if(date == null) {
 			return "";
@@ -73,7 +75,8 @@ private static final long serialVersionUID = 1L;
 			return (new SimpleDateFormat("dd/MM/yyyy HH:mm").format(date));
 		}
 	}
-	
+	// Trả về chuỗi tháng/năm theo định dạng Việt Nam (MM/yyyy),
+// nếu date = null thì trả về chuỗi rỗng
 	public String getMonthYearFormatVN(Date date) {
 		if (date == null) {
 			return "";

@@ -32,6 +32,9 @@ public class HttpService {
 		// Lấy phản hồi từ máy chủ
 //		int responseCode = con.getResponseCode();
 
+		// Lấy phản hồi từ máy chủ
+//		int responseCode = con.getResponseCode();
+
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		String inputLine;
 		StringBuffer response = new StringBuffer();

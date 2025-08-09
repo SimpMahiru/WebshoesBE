@@ -23,8 +23,10 @@ public class Category extends BaseEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	//id
 
 	private String name;
+	//ten
 
 	@Column(name = "parent_id")
 	private int parentId;
