@@ -15,6 +15,7 @@ public enum StoreProcedureStatusCodeEnum {
 	public int getValue() {
 		return value;
 	}
+	// Phương thức tìm enum dựa trên giá trị số nguyên
 
 	public static StoreProcedureStatusCodeEnum valueOf(int value) {
 		switch (value) {

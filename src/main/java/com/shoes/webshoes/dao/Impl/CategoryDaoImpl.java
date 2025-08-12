@@ -52,7 +52,9 @@ public class CategoryDaoImpl extends AbstractDao<Integer, Category> implements C
 
 	@Override
 	public List<Category> getAll() throws Exception {
+		// Lấy đối tượng CriteriaBuilder để xây dựng câu truy vấn
 		CriteriaBuilder builder = this.getBuilder();
+		// Tạo câu truy vấn CriteriaQuery cho entity Category
 		CriteriaQuery<Category> query = builder.createQuery(Category.class);
 		Root<Category> root = query.from(Category.class);
 //		query.where(builder.equal(root.get("name"), name));
