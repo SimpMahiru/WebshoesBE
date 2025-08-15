@@ -20,11 +20,11 @@ public enum StoreProcedureStatusCodeEnum {
 	public static StoreProcedureStatusCodeEnum valueOf(int value) {
 		switch (value) {
 		case 0:
-			return SUCCESS;
+			return SUCCESS;// Thành công
 		case 2:
-			return INPUT_INVALID;
+			return INPUT_INVALID;  // Dữ liệu đầu vào không hợp lệ
 		default:
-			return FAIL;
+			return FAIL; // Thất bại
 			//a
 		}
 	}
